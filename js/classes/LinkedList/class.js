@@ -8,6 +8,7 @@ class LinkedList {
         this.head = node
         this.tail = node
         this.list = [node]
+        this.length = 1
     }
 
     display() {
@@ -24,12 +25,15 @@ class LinkedList {
 
     getHead = () => this.head
 
+    getLength = () => this.length
+
     add(value) {
         const node = new Node(value)
         const prev = this.list[this.list.length - 1];
         prev.pointer = node
         this.tail = node
         this.list.push(node)
+        this.length += 1
     }
 }
 
