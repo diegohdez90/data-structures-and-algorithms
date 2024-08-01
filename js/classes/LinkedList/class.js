@@ -7,18 +7,16 @@ class LinkedList {
         const node = new Node(value)
         this.head = node
         this.tail = node
-        this.list = [node]
         this.length = 1
     }
 
     display() {
-        let node = this.list[0];
+        let node = this.head
         let index = 0
-        do {
-            node = this.list[index]
+        while(node != null) {
             console.log(node)
-            index++
-        } while(node.pointer !== null)
+            node = node.pointer
+        }
     }
 
     getTail = () => JSON.stringify(this.tail)
@@ -29,10 +27,9 @@ class LinkedList {
 
     add(value) {
         const node = new Node(value)
-        const prev = this.list[this.list.length - 1];
+        const prev = this.tail
         prev.pointer = node
         this.tail = node
-        this.list.push(node)
         this.length += 1
     }
 }
