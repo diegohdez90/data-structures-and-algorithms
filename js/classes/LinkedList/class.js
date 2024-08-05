@@ -4,7 +4,10 @@ class LinkedList {
 
     list = Array()
     constructor(value) {
-        const node = new Node(value)
+        let node = null
+        if (value) {
+            node = new Node(value)
+        }
         this.head = node
         this.tail = node
         if (node)
@@ -52,6 +55,30 @@ class LinkedList {
             this.tail = node
         }
         this.length += 1
+    }
+
+    pop() {
+        if (this.head) {
+            console.log("========================");
+            let tmp = this.head
+            let prev = this.head
+            while(tmp.pointer) {
+                console.log(`tmp: ${JSON.stringify(tmp)}`);
+                console.log(`prev: ${JSON.stringify(prev)}`);
+                prev = tmp
+                tmp = tmp.pointer
+            }
+            console.log('========================');
+            console.log(`tmp: ${JSON.stringify(tmp)}`);
+            console.log(`prev: ${JSON.stringify(prev)}`);
+            prev.pointer = null
+            this.tail = prev
+            this.length -= 1
+            if (this.length == 0) {
+                this.tail = null
+                this.head = null
+            }
+        }
     }
 }
 
