@@ -90,6 +90,20 @@ class LinkedList {
         
         this.length++
     }
+
+    shift() {
+        let node = null
+        if (this.head) {
+            node = this.head
+            this.head = this.head.pointer
+            node.pointer = null
+            this.length--
+            if (this.length == 0)
+                this.tail = null
+        }
+        return node
+    }
+
 }
 
 export default LinkedList;
