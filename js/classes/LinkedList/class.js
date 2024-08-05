@@ -39,7 +39,7 @@ class LinkedList {
 
     getTail = () => JSON.stringify(this.tail)
 
-    getHead = () => this.head
+    getHead = () => JSON.stringify(this.head)
 
     getLength = () => this.length
 
@@ -79,6 +79,16 @@ class LinkedList {
                 this.head = null
             }
         }
+    }
+
+    unshift(value) {
+        const node = new Node(value)
+        node.pointer = this.head
+        this.head = node
+        if (!this.tail)
+            this.tail = node
+        
+        this.length++
     }
 }
 
