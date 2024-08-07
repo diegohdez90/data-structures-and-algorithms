@@ -143,6 +143,8 @@ class LinkedList {
             const tmp = this.tail
             tmp.pointer = node
             this.tail = node
+            this.length++
+            return true
         }
         const tmp = this.getById(index - 1)
         const pointer = tmp.pointer
@@ -150,7 +152,6 @@ class LinkedList {
         node.pointer = pointer
         tmp.pointer = node
         this.length++
-
     }
 
     change(node, tmp) {
