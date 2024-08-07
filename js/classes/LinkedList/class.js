@@ -104,6 +104,34 @@ class LinkedList {
         return node
     }
 
+    get(value) {
+        let node = this.head
+
+        while(node !== null) {
+            if (node.value === value)
+                return JSON.stringify(node)
+            node = node.pointer
+        }
+        return 'Unable to find node with the value: ' + value
+    }
+
+    getById(index) {
+        if (index <= -1 || index >= this.length)
+            return 'Unable to find value by index: ' + index
+
+        console.log('looking for index: ' + index);
+        
+        let indexCounter = 0
+        let node = this.head
+
+        while (indexCounter < index) {
+            node = node.pointer
+            indexCounter++
+        }
+
+        return JSON.stringify(node)
+    }
+
 }
 
 export default LinkedList;
