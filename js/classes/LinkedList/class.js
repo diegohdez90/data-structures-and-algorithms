@@ -27,7 +27,6 @@ class LinkedList {
         console.log('the ll');
         
         let node = this.head
-        let index = 0
         while(node != null) {
             console.log(node)
             node = node.pointer
@@ -37,9 +36,9 @@ class LinkedList {
         
     }
 
-    getTail = () => JSON.stringify(this.tail)
+    getTail = () => this.tail
 
-    getHead = () => JSON.stringify(this.head)
+    getHead = () => this.head
 
     getLength = () => this.length
 
@@ -59,18 +58,12 @@ class LinkedList {
 
     pop() {
         if (this.head) {
-            console.log("========================");
             let tmp = this.head
             let prev = this.head
             while(tmp.pointer) {
-                console.log(`tmp: ${JSON.stringify(tmp)}`);
-                console.log(`prev: ${JSON.stringify(prev)}`);
                 prev = tmp
                 tmp = tmp.pointer
             }
-            console.log('========================');
-            console.log(`tmp: ${JSON.stringify(tmp)}`);
-            console.log(`prev: ${JSON.stringify(prev)}`);
             prev.pointer = null
             this.tail = prev
             this.length -= 1
@@ -118,8 +111,6 @@ class LinkedList {
     getById(index) {
         if (index <= -1 || index >= this.length)
             return 'Unable to find value by index: ' + index
-
-        console.log('looking for index: ' + index);
         
         let indexCounter = 0
         let node = this.head
