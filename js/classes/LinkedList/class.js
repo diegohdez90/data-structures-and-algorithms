@@ -123,6 +123,15 @@ class LinkedList {
         return node
     }
 
+    set(index, value) {
+        let tmp = this.getById(index)
+        if (tmp) {
+            tmp.value = value
+            return true
+        }
+        return false
+    }
+
 }
 
 export default LinkedList;
