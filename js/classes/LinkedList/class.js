@@ -102,15 +102,15 @@ class LinkedList {
 
         while(node !== null) {
             if (node.value === value)
-                return JSON.stringify(node)
+                return node
             node = node.pointer
         }
-        return 'Unable to find node with the value: ' + value
+        return false
     }
 
     getById(index) {
         if (index <= -1 || index >= this.length)
-            return 'Unable to find value by index: ' + index
+            return false
         
         let indexCounter = 0
         let node = this.head
@@ -120,7 +120,7 @@ class LinkedList {
             indexCounter++
         }
 
-        return JSON.stringify(node)
+        return node
     }
 
 }
