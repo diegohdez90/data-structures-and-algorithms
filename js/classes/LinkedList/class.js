@@ -132,6 +132,44 @@ class LinkedList {
         return false
     }
 
+    insert (index, value) {
+        if (index <= -1 || index > this.getLength()) return false
+        if (index === 0) {
+            this.unshift(value)
+            return true
+        }
+        if (index === this.length) {
+            const node = new Node(value)
+            const tmp = this.tail
+            tmp.pointer = node
+            this.tail = node
+        }
+        const tmp = this.getById(index - 1)
+        const pointer = tmp.pointer
+        const node = new Node(value)
+        node.pointer = pointer
+        tmp.pointer = node
+        this.length++
+
+    }
+
+    change(node, tmp) {
+        
+    }
+
+    isTail (value) {
+        if (this.tail) {
+            return this.tail.value === value
+        }
+        return false
+    }
+
+    isHead (value) {
+        if (this.head) {
+            return this.head.value === value
+        }
+        return false
+    }
 }
 
 export default LinkedList;
