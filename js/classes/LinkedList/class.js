@@ -163,6 +163,22 @@ class LinkedList {
         this.length--
         return true
     }
+
+    reverse() {
+        let tmp = this.head
+        this.head = this.tail
+        this.tail = tmp
+
+        let pointer = tmp
+        let prev = null
+        for (let index = 0; index < this.length; index++) {
+            pointer = tmp.pointer
+            tmp.pointer = prev
+            prev = tmp
+            tmp = pointer
+        }
+        return true
+    }
 }
 
 export default LinkedList;
