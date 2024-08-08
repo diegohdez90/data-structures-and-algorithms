@@ -71,7 +71,9 @@ class LinkedList {
                 this.tail = null
                 this.head = null
             }
+            return true
         }
+        return false
     }
 
     unshift(value) {
@@ -93,8 +95,9 @@ class LinkedList {
             this.length--
             if (this.length == 0)
                 this.tail = null
+            return true
         }
-        return node
+        return false
     }
 
     get(value) {
@@ -150,22 +153,15 @@ class LinkedList {
         this.length++
     }
 
-    change(node, tmp) {
-        
-    }
-
-    isTail (value) {
-        if (this.tail) {
-            return this.tail.value === value
-        }
-        return false
-    }
-
-    isHead (value) {
-        if (this.head) {
-            return this.head.value === value
-        }
-        return false
+    delete(index) {
+        if (index <= -1 || index >= this.getLength()) return false
+        if (index === 0) return this.shift()
+        if (index === this.length - 1) return this.pop()
+        const node = this.getById(index - 1)
+        const nodeDelete = node.pointer
+        node.pointer = nodeDelete.pointer
+        this.length--
+        return true
     }
 }
 
