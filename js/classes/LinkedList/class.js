@@ -139,11 +139,7 @@ class LinkedList {
             return true
         }
         if (index === this.length) {
-            const node = new Node(value)
-            const tmp = this.tail
-            tmp.pointer = node
-            this.tail = node
-            this.length++
+            this.push(value)
             return true
         }
         const tmp = this.getById(index - 1)
