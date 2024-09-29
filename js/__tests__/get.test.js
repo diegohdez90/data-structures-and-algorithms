@@ -1,4 +1,4 @@
-import LinkedList from "../classes/index.js";
+import { LinkedList } from "../classes/index.js";
 
 describe('get value', () => {
   it('get by value', () => {
