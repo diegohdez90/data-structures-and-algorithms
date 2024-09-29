@@ -25,6 +25,21 @@ class DoubleLinkedList {
     this.length++
     return this
   }
+
+  pop() {
+    if (this.length == 0)
+      return 
+    let tmp = this.tail
+    this.tail = tmp.prev
+    tmp.prev = null
+    if (this.tail !== null)
+      this.tail.next =  null
+    if (this.tail == null) [
+      this.head = null
+    ]
+    this.length--
+    return tmp
+  }
 }
 
 export default DoubleLinkedList
