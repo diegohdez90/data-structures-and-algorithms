@@ -1,5 +1,4 @@
-import LinkedList from "./classes/index.js";
-
+import { LinkedList } from './classes/index.js'
 console.log("=========================")
 console.log("LL")
 console.log("=========================")
