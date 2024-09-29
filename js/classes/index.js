@@ -1,3 +1,5 @@
 import LinkedList from "./LinkedList/index.js";
-
-export default LinkedList;
+import DoubleLinkedList from "./DoubleLinkedList/class.js";
+export {
+  LinkedList, DoubleLinkedList
+};
