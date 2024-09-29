@@ -5,7 +5,7 @@ class DoubleLinkedList {
     let node =  null
     this.length = 0
     if (value) {
-      node = new DoubleLinkedList(value)
+      node = new NodeDouble(value)
       this.length = 1
     }
     this.head = node
