@@ -40,6 +40,20 @@ class DoubleLinkedList {
     this.length--
     return tmp
   }
+
+  unshift(v) {
+    const node = new NodeDouble(v)
+    if (this.length == 0) {
+      this.head = node
+      this.tail = node
+      this.length++
+      return
+    }
+    node.next =  this.head
+    this.head.prev = node
+    this.head = node
+    this.length++
+  }
 }
 
 export default DoubleLinkedList
