@@ -23,7 +23,7 @@ class DoubleLinkedList {
       this.tail = node
     }
     this.length++
-    return this
+    return true
   }
 
   pop() {
@@ -47,12 +47,13 @@ class DoubleLinkedList {
       this.head = node
       this.tail = node
       this.length++
-      return
+      return node
     }
     node.next =  this.head
     this.head.prev = node
     this.head = node
     this.length++
+    return node
   }
 
   shift() {
@@ -94,6 +95,24 @@ class DoubleLinkedList {
       return true
     }
     return false
+  }
+
+  insert(index, value) {
+    if (index < 0 || index > this.length)
+      return null
+    if (index == 0)
+      return this.unshift(value)
+    if (index == this.length)
+      return this.push(value)
+    var node = new NodeDouble(value)
+    const prev = this.get(index - 1)
+    const next = prev.next
+    prev.next = node
+    node.prev = prev
+    node.next = next
+    next.prev = node
+    this.length++
+    return true
   }
 }
 
