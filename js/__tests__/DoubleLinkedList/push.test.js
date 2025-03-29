@@ -25,6 +25,6 @@ describe('push dll', () => {
     dll.push(5)
     expect(dll.tail.value).toBe(5)
     expect(dll.length).toBe(5)
-    
+    expect(dll.head.value).toBe(7)
   });
 })
