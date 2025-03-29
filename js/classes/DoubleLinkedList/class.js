@@ -114,6 +114,22 @@ class DoubleLinkedList {
     this.length++
     return true
   }
+
+  remove(index) {
+    if (index < 0 || index >= this.length) return null
+    if (index == 0) {
+      return this.shift()
+    }
+    if (index == this.length - 1)
+      return this.pop()
+    var tmp = this.get(index)
+    tmp.prev.next = tmp.next
+    tmp.next.prev = tmp.prev
+    tmp.next = null
+    tmp.prev = null
+    this.length--
+    return tmp
+  }
 }
 
 export default DoubleLinkedList
