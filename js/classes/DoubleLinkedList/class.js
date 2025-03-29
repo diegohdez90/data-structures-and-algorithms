@@ -69,6 +69,16 @@ class DoubleLinkedList {
     this.length--
     return tmp
   }
+
+  get(index) {
+    if (index < 0 || index >= this.length)
+      return null
+    let tmp = this.head
+    for (let i = 0; i < index; i++) {
+      tmp = tmp.next
+    }
+    return tmp
+  }
 }
 
 export default DoubleLinkedList
