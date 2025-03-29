@@ -86,6 +86,15 @@ class DoubleLinkedList {
     }
     return tmp
   }
+
+  set(index, value) {
+    let node = this.get(index)
+    if (node) {
+      node.value = value
+      return true
+    }
+    return false
+  }
 }
 
 export default DoubleLinkedList
