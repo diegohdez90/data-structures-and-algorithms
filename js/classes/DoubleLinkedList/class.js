@@ -58,12 +58,14 @@ class DoubleLinkedList {
   shift() {
     if (this.length == 0) return undefined
     const tmp = this.head
-    this.head = tmp.next
-    if (this.length == 1)
+    if (this.length == 1) {
       this.tail = null
-    if (this.length > 1)
+      this.head = null
+    } else {
+      this.head = this.head.next
       this.head.prev = null
-    tmp.next = null
+      tmp.next = null
+    }
     this.length--
     return tmp
   }
