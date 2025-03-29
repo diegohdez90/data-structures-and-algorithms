@@ -74,8 +74,15 @@ class DoubleLinkedList {
     if (index < 0 || index >= this.length)
       return null
     let tmp = this.head
-    for (let i = 0; i < index; i++) {
-      tmp = tmp.next
+    if (index < this.length/2) {
+      for (let i = 0; i < index; i++) {
+        tmp = tmp.next
+      }
+    } else {
+      tmp = this.tail
+      for (let i = this.length - 1; i > index; i--) {
+        tmp = tmp.prev
+      }
     }
     return tmp
   }
