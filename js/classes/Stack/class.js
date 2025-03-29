@@ -18,6 +18,15 @@ class Stack {
     this.length++
     return this
   }
+
+  pop() {
+    if (this.length == 0) return null
+    var tmp = this.top
+    this.top = tmp.pointer
+    tmp.pointer = null
+    this.length--
+    return tmp
+  }
 }
 
 export default Stack
