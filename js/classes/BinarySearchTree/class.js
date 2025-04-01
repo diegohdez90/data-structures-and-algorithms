@@ -30,6 +30,21 @@ class BinarySearchTree {
       }
     }
   }
+
+  find(value) {
+    if (this.root === null) return false
+    let tmp = this.root
+    while(tmp) {
+      if (value < tmp.value) {
+        tmp = tmp.left
+      } else if (value > tmp.value) {
+        tmp = tmp.right
+      } else {
+        return true
+      }
+    }
+    return false
+  }
 }
 
 export default BinarySearchTree
