@@ -1,3 +1,3 @@
-import BinarySearchTree from "./class";
+import BinarySearchTree from "./class.js";
 
 export default BinarySearchTree;

@@ -1,3 +1,3 @@
-import TreeNode from "./class";
+import TreeNode from "./class.js";
 
 export default TreeNode;
