@@ -4,7 +4,7 @@ import Stack from "./Stack/index.js";
 import Queue from "./Queue/class.js";
 import TreeNode from "./TreeNode/index.js";
 import BinarySearchTree from "./BinarySearchTree/index.js";
-
+import HashTable from "./HashTable/index.js";
 
 export {
   LinkedList,
@@ -12,5 +12,6 @@ export {
   Stack,
   Queue,
   TreeNode,
-  BinarySearchTree
+  BinarySearchTree,
+  HashTable,
 };
