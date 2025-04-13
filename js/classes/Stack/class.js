@@ -2,9 +2,14 @@ import Node from "../Node/index.js";
 
 class Stack {
   constructor(value) {
-    var node = new Node(value)
-    this.top = node
-    this.length = 1
+    this.length = 0
+    if (value) {
+      var node = new Node(value)
+      this.top = node
+      this.length += 1
+      return
+    }
+    this.top = null
   }
 
   push(value) {
