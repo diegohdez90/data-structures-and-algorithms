@@ -12,6 +12,14 @@ class DoubleLinkedList {
     this.tail = node
   }
 
+  print() {
+    let tmp = this.head
+    while (tmp != null) {
+      console.log(tmp.value)
+      tmp = tmp.next
+    }
+  }
+
   push(v) {
     const node = new NodeDouble(v)
     if (this.length === 0) {
@@ -130,6 +138,43 @@ class DoubleLinkedList {
     this.length--
     return tmp
   }
+
+  swapFirstAndLast() {
+
+    if (this.length <= 1)
+      return this
+    if (this.length == 2) {
+      var first = this.head
+      var last = this.tail
+
+      this.head = first.next
+      this.tail = last.prev
+      last.next = first
+      last.prev = null
+      first.next = null
+      first.prev = last
+      return this
+    }
+    var first = this.head
+    var last = this.tail
+
+    var prevTail = last.prev
+    var nextHead = first.next
+    last.prev = null
+    last.next = nextHead
+    nextHead.prev = last
+
+    first.prev = prevTail
+    first.next = null
+    prevTail.next = first
+
+    var tmp = first
+    this.head = last
+    this.tail = tmp
+    return this
+  }
+
+
 }
 
 export default DoubleLinkedList
